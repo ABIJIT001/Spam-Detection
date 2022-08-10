@@ -34,7 +34,7 @@ def transform_text(text):
 
 
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
-model = pickle.load(open('model.pkl','rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
 st.title("Spam Classifier")
 
@@ -48,10 +48,9 @@ if st.button('Predict'):
     vector_input = tfidf.transform([transform_message])
 
     # 3 predict
-    result = model.predict(vector_input)[0]
+    result = model.predict(vector_input)
 
     # 4. Display
-
 
     if result == 1:
         st.header("Spam")
